@@ -1,0 +1,17 @@
+modules = ["nodejs-20", "nix"]
+run = "npm run start"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "npm run start"]
+deploymentTarget = "cloudrun"
+
+[[ports]]
+localPort = 80
+externalPort = 80
+
+[[ports]]
+localPort = 2006
+externalPort = 3000
